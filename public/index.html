@@ -15,9 +15,10 @@
     socket.on('disconnect',function(){
         console.log('Desconectado del servidor');
     });
-
+    //esto emite un mensaje
     socket.emit('mensaje',{nombre:'Raul'});
 
+    //esto escucha un mensaje o evento personalizado
     socket.on('mensaje',function(payload){
         console.log('Escuchando',payload);
     });

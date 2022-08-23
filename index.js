@@ -6,21 +6,9 @@ require('dotenv').config();
 
 // node server
 const server = require('http').createServer(app);
-const io= require('socket.io')(server);
+module.exports.io = require('socket.io')(server);
+require('./sockets/socket');
 
-//Mensajes de sockets
-io.on('connection', client => {
-   console.log('Client connected');
-   client.on('disconnect',()=>{
-      console.log('Client disconnected');
-   });
-
-   client.on('mensaje', (payload) => {
-      console.log('Mensaje',payload)
-
-      io.emit('mensaje',{admin:'Nuevo mensaje'});
-   })
-});
 
 
 // TODO path publico
