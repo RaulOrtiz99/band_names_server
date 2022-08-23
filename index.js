@@ -4,6 +4,9 @@ const app = express();
 const path= require('path');
 require('dotenv').config();
 
+// node server
+const server = require('http').createServer();
+
 // TODO path publico
 const publicPath= path.resolve(__dirname,'public');
 
