@@ -16,6 +16,12 @@
         console.log('Desconectado del servidor');
     });
 
+    socket.emit('mensaje',{nombre:'Raul'});
+
+    socket.on('mensaje',function(payload){
+        console.log('Escuchando',payload);
+    });
+
 </script>
 </body>
 </html>
